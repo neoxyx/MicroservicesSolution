@@ -1,0 +1,552 @@
+2025-07-14 08:17:29.077 -05:00 [INF] Iniciando UserService
+2025-07-14 08:17:29.511 -05:00 [FTL] UserService terminado inesperadamente
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Program.cs:line 112
+2025-07-14 08:36:32.011 -05:00 [INF] Iniciando UserService
+2025-07-14 08:36:32.161 -05:00 [FTL] UserService terminado inesperadamente
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: UserService.Repositories.Interfaces.IUserRepository Lifetime: Scoped ImplementationType: UserService.Repositories.UserRepository': Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.) (Error while validating the service descriptor 'ServiceType: UserService.Services.Interfaces.IUserService Lifetime: Scoped ImplementationType: UserService.Services.UserService': Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.) (Error while validating the service descriptor 'ServiceType: UserService.Services.Interfaces.IAuthService Lifetime: Scoped ImplementationType: UserService.Services.AuthService': Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: UserService.Repositories.Interfaces.IUserRepository Lifetime: Scoped ImplementationType: UserService.Repositories.UserRepository': Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Program.cs:line 103
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: UserService.Services.Interfaces.IUserService Lifetime: Scoped ImplementationType: UserService.Services.UserService': Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: UserService.Services.Interfaces.IAuthService Lifetime: Scoped ImplementationType: UserService.Services.AuthService': Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'UserService.Data.UserDbContext' while attempting to activate 'UserService.Repositories.UserRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2025-07-14 09:35:26.059 -05:00 [INF] Iniciando UserService
+2025-07-14 09:35:26.377 -05:00 [INF] UserService iniciado correctamente
+2025-07-14 09:35:26.415 -05:00 [INF] User profile is available. Using 'C:\Users\jhon.valdes\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-14 09:35:26.561 -05:00 [INF] Now listening on: http://localhost:5149
+2025-07-14 09:35:26.566 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 09:35:26.568 -05:00 [INF] Hosting environment: Development
+2025-07-14 09:35:26.569 -05:00 [INF] Content root path: C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService
+2025-07-14 09:38:29.982 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/ - null null
+2025-07-14 09:38:30.045 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-07-14 09:38:30.135 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/ - 404 0 null 156.4645ms
+2025-07-14 09:38:30.211 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5149/, Response status code: 404
+2025-07-14 09:38:42.895 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - null null
+2025-07-14 09:38:43.076 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 180.4093ms
+2025-07-14 09:38:43.195 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/favicon.ico - null null
+2025-07-14 09:38:43.200 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/favicon.ico - 404 0 null 5.6052ms
+2025-07-14 09:38:43.206 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5149/favicon.ico, Response status code: 404
+2025-07-14 10:21:03.373 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs - null null
+2025-07-14 10:21:03.385 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs - 301 0 null 11.3081ms
+2025-07-14 10:21:03.389 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs/index.html - null null
+2025-07-14 10:21:03.518 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs/index.html - 200 null text/html;charset=utf-8 128.836ms
+2025-07-14 10:21:03.546 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs/swagger-ui.css - null null
+2025-07-14 10:21:03.578 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs/swagger-ui-bundle.js - null null
+2025-07-14 10:21:03.578 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs/swagger-ui-standalone-preset.js - null null
+2025-07-14 10:21:03.626 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-07-14 10:21:03.626 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-07-14 10:21:03.648 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-07-14 10:21:03.652 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs/swagger-ui.css - 200 152034 text/css 105.3898ms
+2025-07-14 10:21:03.654 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs/swagger-ui-standalone-preset.js - 200 230280 text/javascript 75.9669ms
+2025-07-14 10:21:03.656 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs/swagger-ui-bundle.js - 200 1456682 text/javascript 78.089ms
+2025-07-14 10:21:03.918 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - null null
+2025-07-14 10:21:03.937 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.2387ms
+2025-07-14 10:21:03.969 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs/favicon-32x32.png - null null
+2025-07-14 10:21:03.977 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-07-14 10:21:03.988 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs/favicon-32x32.png - 200 628 image/png 19.0211ms
+2025-07-14 10:24:27.060 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/Auth/login - application/json 52
+2025-07-14 10:24:27.076 -05:00 [INF] CORS policy execution successful.
+2025-07-14 10:24:27.090 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:24:27.129 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 10:24:28.879 -05:00 [INF] Executed DbCommand (34ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 10:24:29.253 -05:00 [WRN] Failed login attempt for username: admin
+2025-07-14 10:24:29.257 -05:00 [WRN] Login failed for user: admin
+System.UnauthorizedAccessException: Invalid credentials
+   at UserService.Services.AuthService.Login(LoginDto loginDto) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Services\AuthService.cs:line 56
+   at UserService.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Controllers\AuthController.cs:line 48
+2025-07-14 10:24:29.286 -05:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 10:24:29.310 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 2173.1127ms
+2025-07-14 10:24:29.315 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:24:29.326 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/Auth/login - 401 null application/json; charset=utf-8 2265.9609ms
+2025-07-14 10:25:13.941 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/Auth/login - application/json 51
+2025-07-14 10:25:13.947 -05:00 [INF] CORS policy execution successful.
+2025-07-14 10:25:13.949 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:25:13.951 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 10:25:14.013 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 10:25:14.241 -05:00 [WRN] Failed login attempt for username: admin
+2025-07-14 10:25:14.243 -05:00 [WRN] Login failed for user: admin
+System.UnauthorizedAccessException: Invalid credentials
+   at UserService.Services.AuthService.Login(LoginDto loginDto) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Services\AuthService.cs:line 56
+   at UserService.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Controllers\AuthController.cs:line 48
+2025-07-14 10:25:14.246 -05:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 10:25:14.249 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 284.8429ms
+2025-07-14 10:25:14.253 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:25:14.257 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/Auth/login - 401 null application/json; charset=utf-8 315.7874ms
+2025-07-14 10:27:21.279 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/Auth/login - application/json 51
+2025-07-14 10:27:21.282 -05:00 [INF] CORS policy execution successful.
+2025-07-14 10:27:21.283 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:27:21.285 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 10:27:21.380 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 10:27:21.588 -05:00 [WRN] Failed login attempt for username: user1
+2025-07-14 10:27:21.589 -05:00 [WRN] Login failed for user: user1
+System.UnauthorizedAccessException: Invalid credentials
+   at UserService.Services.AuthService.Login(LoginDto loginDto) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Services\AuthService.cs:line 56
+   at UserService.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\Controllers\AuthController.cs:line 48
+2025-07-14 10:27:21.592 -05:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 10:27:21.598 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 300.4045ms
+2025-07-14 10:27:21.601 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:27:21.603 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/Auth/login - 401 null application/json; charset=utf-8 324.4842ms
+2025-07-14 10:32:04.599 -05:00 [INF] Application is shutting down...
+2025-07-14 10:33:04.950 -05:00 [INF] Iniciando UserService
+2025-07-14 10:33:05.242 -05:00 [INF] UserService iniciado correctamente
+2025-07-14 10:33:05.296 -05:00 [INF] User profile is available. Using 'C:\Users\jhon.valdes\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-14 10:33:05.435 -05:00 [INF] Now listening on: http://localhost:5149
+2025-07-14 10:33:05.439 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 10:33:05.441 -05:00 [INF] Hosting environment: Development
+2025-07-14 10:33:05.443 -05:00 [INF] Content root path: C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService
+2025-07-14 10:33:30.904 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/generate-hash?password=Admin123! - null null
+2025-07-14 10:33:30.971 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-07-14 10:33:31.009 -05:00 [INF] Executing endpoint 'HTTP: GET /generate-hash'
+2025-07-14 10:33:32.065 -05:00 [INF] Setting HTTP status code 200.
+2025-07-14 10:33:32.107 -05:00 [INF] Writing value of type '<>f__AnonymousType5`2' as Json.
+2025-07-14 10:33:32.139 -05:00 [INF] Executed endpoint 'HTTP: GET /generate-hash'
+2025-07-14 10:33:32.145 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/generate-hash?password=Admin123! - 200 null application/json; charset=utf-8 1242.9839ms
+2025-07-14 10:35:36.333 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/Auth/login - application/json 52
+2025-07-14 10:35:36.340 -05:00 [INF] CORS policy execution successful.
+2025-07-14 10:35:36.347 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:35:36.390 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 10:35:37.645 -05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 10:35:38.613 -05:00 [INF] User logged in: admin
+2025-07-14 10:35:38.655 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 10:35:38.668 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 2266.1313ms
+2025-07-14 10:35:38.670 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:35:38.689 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/Auth/login - 200 null application/json; charset=utf-8 2356.5241ms
+2025-07-14 10:36:29.826 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/Users - null null
+2025-07-14 10:36:29.843 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-07-14 10:36:29.851 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-14 10:36:29.853 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/Users - 401 0 null 26.6897ms
+2025-07-14 10:36:40.105 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/Users - null null
+2025-07-14 10:36:40.111 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-07-14 10:36:40.115 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-14 10:36:40.121 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/Users - 401 0 null 16.0905ms
+2025-07-14 10:37:29.145 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/Users - null null
+2025-07-14 10:37:29.169 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-07-14 10:37:29.173 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-14 10:37:29.175 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/Users - 401 0 null 29.7162ms
+2025-07-14 10:38:17.499 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/Auth/login - application/json 52
+2025-07-14 10:38:17.507 -05:00 [INF] CORS policy execution successful.
+2025-07-14 10:38:17.509 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:38:17.512 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 10:38:17.573 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 10:38:18.438 -05:00 [INF] User logged in: admin
+2025-07-14 10:38:18.441 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 10:38:18.443 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 927.8342ms
+2025-07-14 10:38:18.446 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 10:38:18.448 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/Auth/login - 200 null application/json; charset=utf-8 948.8152ms
+2025-07-14 10:38:39.886 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/Users - null null
+2025-07-14 10:38:39.890 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-07-14 10:38:39.893 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-14 10:38:39.895 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/Users - 401 0 null 8.7104ms
+2025-07-14 10:39:09.148 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/Users - null null
+2025-07-14 10:39:09.154 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-07-14 10:39:09.162 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-14 10:39:09.172 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/Users - 401 0 null 23.3989ms
+2025-07-14 10:39:28.191 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/Users - null null
+2025-07-14 10:39:28.263 -05:00 [INF] Executing endpoint 'UserService.Controllers.UsersController.GetAllUsers (UserService)'
+2025-07-14 10:39:28.288 -05:00 [INF] Route matched with {action = "GetAllUsers", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller UserService.Controllers.UsersController (UserService).
+2025-07-14 10:39:28.385 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+2025-07-14 10:39:28.389 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[UserService.Models.Entities.User, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[UserService.Models.DTOs.UserResponseDto, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 10:39:28.419 -05:00 [INF] Executed action UserService.Controllers.UsersController.GetAllUsers (UserService) in 125.909ms
+2025-07-14 10:39:28.421 -05:00 [INF] Executed endpoint 'UserService.Controllers.UsersController.GetAllUsers (UserService)'
+2025-07-14 10:39:28.423 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/Users - 200 null application/json; charset=utf-8 232.235ms
+2025-07-14 10:39:47.602 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/Users/1 - null null
+2025-07-14 10:39:47.608 -05:00 [INF] Executing endpoint 'UserService.Controllers.UsersController.GetUserById (UserService)'
+2025-07-14 10:39:47.623 -05:00 [INF] Route matched with {action = "GetUserById", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(Int32) on controller UserService.Controllers.UsersController (UserService).
+2025-07-14 10:39:47.677 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2025-07-14 10:39:47.682 -05:00 [INF] Executing OkObjectResult, writing value of type 'UserService.Models.DTOs.UserResponseDto'.
+2025-07-14 10:39:47.684 -05:00 [INF] Executed action UserService.Controllers.UsersController.GetUserById (UserService) in 57.7189ms
+2025-07-14 10:39:47.685 -05:00 [INF] Executed endpoint 'UserService.Controllers.UsersController.GetUserById (UserService)'
+2025-07-14 10:39:47.687 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/Users/1 - 200 null application/json; charset=utf-8 84.6244ms
+2025-07-14 10:40:48.861 -05:00 [INF] Application is shutting down...
+2025-07-14 12:04:29.489 -05:00 [INF] Iniciando UserService
+2025-07-14 12:04:29.827 -05:00 [INF] UserService iniciado correctamente
+2025-07-14 12:04:29.876 -05:00 [INF] User profile is available. Using 'C:\Users\jhon.valdes\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-14 12:04:30.021 -05:00 [INF] Now listening on: http://localhost:5149
+2025-07-14 12:04:30.045 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 12:04:30.130 -05:00 [INF] Hosting environment: Development
+2025-07-14 12:04:30.162 -05:00 [INF] Content root path: C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService
+2025-07-14 12:33:12.820 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 55
+2025-07-14 12:33:12.867 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-07-14 12:33:12.904 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:33:12.937 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 12:33:14.412 -05:00 [INF] Executed DbCommand (62ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 12:33:15.688 -05:00 [INF] User logged in: admin
+2025-07-14 12:33:15.733 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 12:33:15.762 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 2818.4269ms
+2025-07-14 12:33:15.769 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:33:15.785 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 2966.696ms
+2025-07-14 12:35:15.644 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 55
+2025-07-14 12:35:15.655 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:35:15.660 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 12:35:15.828 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 12:35:16.692 -05:00 [INF] User logged in: admin
+2025-07-14 12:35:16.695 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 12:35:16.697 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 979.8599ms
+2025-07-14 12:35:16.704 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:35:16.710 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 1066.454ms
+2025-07-14 12:40:38.902 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - null null
+2025-07-14 12:40:39.048 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 147.1365ms
+2025-07-14 12:40:39.147 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/favicon.ico - null null
+2025-07-14 12:40:39.159 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/favicon.ico - 404 0 null 8.5649ms
+2025-07-14 12:40:39.164 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5149/favicon.ico, Response status code: 404
+2025-07-14 12:40:47.899 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs - null null
+2025-07-14 12:40:47.905 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs - 301 0 null 5.5038ms
+2025-07-14 12:40:47.911 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api-docs/index.html - null null
+2025-07-14 12:40:47.978 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api-docs/index.html - 200 null text/html;charset=utf-8 67.2976ms
+2025-07-14 12:40:48.146 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - null null
+2025-07-14 12:40:48.160 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.411ms
+2025-07-14 12:41:59.137 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 55
+2025-07-14 12:41:59.140 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:41:59.152 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 12:41:59.258 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 12:42:00.172 -05:00 [INF] User logged in: admin
+2025-07-14 12:42:00.190 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 12:42:00.223 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 1068.5931ms
+2025-07-14 12:42:00.256 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:42:00.259 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 1121.7511ms
+2025-07-14 12:49:40.023 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 55
+2025-07-14 12:49:40.031 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:49:40.032 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 12:49:40.043 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 12:49:40.923 -05:00 [INF] User logged in: admin
+2025-07-14 12:49:40.925 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 12:49:40.930 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 895.4588ms
+2025-07-14 12:49:40.934 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 12:49:40.938 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 914.6913ms
+2025-07-14 12:49:54.408 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/users - null null
+2025-07-14 12:49:54.478 -05:00 [INF] Executing endpoint 'UserService.Controllers.UsersController.GetAllUsers (UserService)'
+2025-07-14 12:49:54.487 -05:00 [INF] Route matched with {action = "GetAllUsers", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller UserService.Controllers.UsersController (UserService).
+2025-07-14 12:49:54.523 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+2025-07-14 12:49:54.528 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[UserService.Models.Entities.User, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[UserService.Models.DTOs.UserResponseDto, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 12:49:54.551 -05:00 [INF] Executed action UserService.Controllers.UsersController.GetAllUsers (UserService) in 60.1932ms
+2025-07-14 12:49:54.553 -05:00 [INF] Executed endpoint 'UserService.Controllers.UsersController.GetAllUsers (UserService)'
+2025-07-14 12:49:54.554 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/users - 200 null application/json; charset=utf-8 145.8974ms
+2025-07-14 12:53:47.302 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/users/1 - null null
+2025-07-14 12:53:47.309 -05:00 [INF] Executing endpoint 'UserService.Controllers.UsersController.GetUserById (UserService)'
+2025-07-14 12:53:47.328 -05:00 [INF] Route matched with {action = "GetUserById", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(Int32) on controller UserService.Controllers.UsersController (UserService).
+2025-07-14 12:53:47.378 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2025-07-14 12:53:47.381 -05:00 [INF] Executing OkObjectResult, writing value of type 'UserService.Models.DTOs.UserResponseDto'.
+2025-07-14 12:53:47.383 -05:00 [INF] Executed action UserService.Controllers.UsersController.GetUserById (UserService) in 50.5504ms
+2025-07-14 12:53:47.388 -05:00 [INF] Executed endpoint 'UserService.Controllers.UsersController.GetUserById (UserService)'
+2025-07-14 12:53:47.390 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/users/1 - 200 null application/json; charset=utf-8 88.2342ms
+2025-07-14 12:54:04.331 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/register - application/json 136
+2025-07-14 12:54:04.335 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Register (UserService)'
+2025-07-14 12:54:04.345 -05:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(UserService.Models.DTOs.UserCreateDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 12:54:04.380 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Users` AS `u`
+    WHERE `u`.`Username` = @__username_0)
+2025-07-14 12:54:04.396 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Users` AS `u`
+    WHERE `u`.`Email` = @__email_0)
+2025-07-14 12:54:05.387 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (Size = 50), @p3='?' (DbType = Boolean), @p4='?' (Size = 50), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime), @p8='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`CreatedAt`, `Email`, `FirstName`, `IsActive`, `LastName`, `PasswordHash`, `Role`, `UpdatedAt`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT `Id`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2025-07-14 12:54:05.429 -05:00 [INF] User created with ID: 3
+2025-07-14 12:54:05.431 -05:00 [INF] New user registered with ID: 3
+2025-07-14 12:54:05.432 -05:00 [INF] Executing OkObjectResult, writing value of type 'UserService.Models.DTOs.UserResponseDto'.
+2025-07-14 12:54:05.436 -05:00 [INF] Executed action UserService.Controllers.AuthController.Register (UserService) in 1088.6721ms
+2025-07-14 12:54:05.438 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Register (UserService)'
+2025-07-14 12:54:05.439 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/register - 200 null application/json; charset=utf-8 1108.716ms
+2025-07-14 13:00:35.094 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 55
+2025-07-14 13:00:35.098 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 13:00:35.099 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 13:00:35.110 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 13:00:35.965 -05:00 [INF] User logged in: admin
+2025-07-14 13:00:35.966 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 13:00:35.971 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 868.8795ms
+2025-07-14 13:00:35.974 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 13:00:35.977 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 882.6118ms
+2025-07-14 13:00:47.461 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/users/1 - null null
+2025-07-14 13:00:47.479 -05:00 [INF] Executing endpoint 'UserService.Controllers.UsersController.GetUserById (UserService)'
+2025-07-14 13:00:47.482 -05:00 [INF] Route matched with {action = "GetUserById", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(Int32) on controller UserService.Controllers.UsersController (UserService).
+2025-07-14 13:00:47.500 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2025-07-14 13:00:47.505 -05:00 [INF] Executing OkObjectResult, writing value of type 'UserService.Models.DTOs.UserResponseDto'.
+2025-07-14 13:00:47.513 -05:00 [INF] Executed action UserService.Controllers.UsersController.GetUserById (UserService) in 24.4719ms
+2025-07-14 13:00:47.517 -05:00 [INF] Executed endpoint 'UserService.Controllers.UsersController.GetUserById (UserService)'
+2025-07-14 13:00:47.521 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/users/1 - 200 null application/json; charset=utf-8 60.6727ms
+2025-07-14 13:00:51.185 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5149/api/users - null null
+2025-07-14 13:00:51.193 -05:00 [INF] Executing endpoint 'UserService.Controllers.UsersController.GetAllUsers (UserService)'
+2025-07-14 13:00:51.195 -05:00 [INF] Route matched with {action = "GetAllUsers", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller UserService.Controllers.UsersController (UserService).
+2025-07-14 13:00:51.204 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+2025-07-14 13:00:51.208 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[UserService.Models.Entities.User, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[UserService.Models.DTOs.UserResponseDto, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 13:00:51.214 -05:00 [INF] Executed action UserService.Controllers.UsersController.GetAllUsers (UserService) in 14.7818ms
+2025-07-14 13:00:51.217 -05:00 [INF] Executed endpoint 'UserService.Controllers.UsersController.GetAllUsers (UserService)'
+2025-07-14 13:00:51.221 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5149/api/users - 200 null application/json; charset=utf-8 35.8196ms
+2025-07-14 14:09:03.012 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 55
+2025-07-14 14:09:03.020 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 14:09:03.023 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 14:09:03.038 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 14:09:03.857 -05:00 [INF] User logged in: admin
+2025-07-14 14:09:03.862 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 14:09:03.863 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 837.9187ms
+2025-07-14 14:09:03.870 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 14:09:03.891 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 879.3013ms
+2025-07-14 14:20:38.177 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 55
+2025-07-14 14:20:38.185 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 14:20:38.187 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 14:20:38.199 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 14:20:39.036 -05:00 [INF] User logged in: admin
+2025-07-14 14:20:39.038 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 14:20:39.042 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 852.5521ms
+2025-07-14 14:20:39.047 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 14:20:39.048 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 870.7793ms
+2025-07-14 16:04:10.058 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:04:10.084 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:04:10.093 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:04:10.097 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:04:10.127 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:04:10.887 -05:00 [INF] User logged in: admin
+2025-07-14 16:04:10.893 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:04:10.897 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 798.0293ms
+2025-07-14 16:04:10.899 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:04:10.900 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 845.4941ms
+2025-07-14 16:08:37.649 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:08:37.654 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:08:37.655 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:08:37.657 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:08:37.674 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:08:38.422 -05:00 [INF] User logged in: admin
+2025-07-14 16:08:38.427 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:08:38.430 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 769.9259ms
+2025-07-14 16:08:38.435 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:08:38.438 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 788.2546ms
+2025-07-14 16:20:20.921 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:20:20.928 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:20:20.930 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:20:20.932 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:20:20.949 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:20:21.675 -05:00 [INF] User logged in: admin
+2025-07-14 16:20:21.680 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:20:21.683 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 746.841ms
+2025-07-14 16:20:21.685 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:20:21.687 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 766.3025ms
+2025-07-14 16:26:56.595 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:26:56.611 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:26:56.613 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:26:56.615 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:26:56.638 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:26:57.379 -05:00 [INF] User logged in: admin
+2025-07-14 16:26:57.381 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:26:57.384 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 754.9459ms
+2025-07-14 16:26:57.390 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:26:57.392 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 796.8013ms
+2025-07-14 16:28:03.317 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:28:03.322 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:28:03.325 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:28:03.327 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:28:03.335 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:28:04.058 -05:00 [INF] User logged in: admin
+2025-07-14 16:28:04.062 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:28:04.065 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 734.6651ms
+2025-07-14 16:28:04.068 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:28:04.071 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 753.7703ms
+2025-07-14 16:32:42.609 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:32:42.619 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:32:42.620 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:32:42.621 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:32:42.640 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:32:43.418 -05:00 [INF] User logged in: admin
+2025-07-14 16:32:43.420 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:32:43.422 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 797.8443ms
+2025-07-14 16:32:43.428 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:32:43.435 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 826.285ms
+2025-07-14 16:36:04.942 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:36:04.946 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:36:04.956 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:36:04.958 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:36:04.972 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:36:05.967 -05:00 [INF] User logged in: admin
+2025-07-14 16:36:05.975 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:36:06.006 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 1043.8206ms
+2025-07-14 16:36:06.023 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:36:06.025 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 1083.1961ms
+2025-07-14 16:38:42.975 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:38:42.983 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:38:42.988 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:38:42.989 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:38:43.085 -05:00 [INF] Executed DbCommand (22ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:38:44.059 -05:00 [INF] User logged in: admin
+2025-07-14 16:38:44.061 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:38:44.063 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 1065.331ms
+2025-07-14 16:38:44.069 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:38:44.071 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 1096.3442ms
+2025-07-14 16:48:44.464 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5149/api/auth/login - application/json 43
+2025-07-14 16:48:44.467 -05:00 [INF] CORS policy execution successful.
+2025-07-14 16:48:44.468 -05:00 [INF] Executing endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:48:44.469 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UserService.Models.DTOs.LoginDto) on controller UserService.Controllers.AuthController (UserService).
+2025-07-14 16:48:44.483 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`CreatedAt`, `u`.`Email`, `u`.`FirstName`, `u`.`IsActive`, `u`.`LastName`, `u`.`PasswordHash`, `u`.`Role`, `u`.`UpdatedAt`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2025-07-14 16:48:45.245 -05:00 [INF] User logged in: admin
+2025-07-14 16:48:45.248 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 16:48:45.250 -05:00 [INF] Executed action UserService.Controllers.AuthController.Login (UserService) in 775.6203ms
+2025-07-14 16:48:45.258 -05:00 [INF] Executed endpoint 'UserService.Controllers.AuthController.Login (UserService)'
+2025-07-14 16:48:45.262 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5149/api/auth/login - 200 null application/json; charset=utf-8 798.0962ms
