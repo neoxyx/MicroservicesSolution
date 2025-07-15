@@ -1,9 +1,0 @@
-2025-07-14 12:04:02.098 -05:00 [INF] Now listening on: http://localhost:5008
-2025-07-14 12:04:02.208 -05:00 [INF] Application started. Press Ctrl+C to shut down.
-2025-07-14 12:04:02.221 -05:00 [INF] Hosting environment: Development
-2025-07-14 12:04:02.222 -05:00 [INF] Content root path: C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\ProductService
-2025-07-14 12:50:08.011 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5008/api/products - application/json 120
-2025-07-14 12:50:08.146 -05:00 [WRN] Failed to determine the https port for redirect.
-2025-07-14 12:50:08.153 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5008/api/products - 404 0 null 143.8027ms
-2025-07-14 12:50:08.182 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5008/api/products, Response status code: 404
-2025-07-14 12:58:40.421 -05:00 [INF] Application is shutting down...
