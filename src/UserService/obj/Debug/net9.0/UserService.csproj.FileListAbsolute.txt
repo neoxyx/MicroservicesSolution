@@ -145,3 +145,4 @@ C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\obj\
 C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\obj\Debug\net9.0\ref\UserService.dll
 C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\bin\Debug\net9.0\MySqlConnector.dll
 C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\jhon.valdes\Desktop\pruebafn\MicroservicesSolution\src\UserService\obj\Debug\net9.0\UserService.sourcelink.json

@@ -10,6 +10,7 @@ using UserService.Services.Interfaces;
 using UserService.Data;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuración de la base de datos MySQL
@@ -153,3 +154,5 @@ finally
 {
     Log.CloseAndFlush();
 }
+
+public partial class Program { }
