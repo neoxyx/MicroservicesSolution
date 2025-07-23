@@ -61,7 +61,7 @@ POST /api/auth/register
 {
   "username": "string",
   "email": "user@example.com",
-  "password": "User123!",
+  "password": "Admin123!!",
   "firstName": "string",
   "lastName": "string",
   "role": "string"
@@ -72,7 +72,7 @@ bash
 POST /api/auth/login
 {
   "username": "admin",
-  "password": "Admin123!"
+  "password": "Admin123!!"
 }
 Respuesta:
 
