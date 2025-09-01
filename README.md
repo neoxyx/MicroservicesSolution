@@ -31,6 +31,8 @@ UserService/appsettings.json
 
 ProductService/appsettings.json
 
+Ejecutar migraciones con: dotnet ef database update
+
 3. Ejecutar servicios
 A. Sin Docker
 En terminales separadas:

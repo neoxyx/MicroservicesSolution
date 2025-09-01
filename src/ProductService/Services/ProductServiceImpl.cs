@@ -34,7 +34,6 @@ namespace ProductService.Services
         public async Task<ProductResponseDto> CreateProductAsync(ProductCreateDto productDto)
         {
             var product = productDto.ToProductEntity();
-            product.Status = ProductStatus.Active;
             product.CreatedAt = DateTime.UtcNow;
 
             await _repository.AddProductAsync(product);
@@ -50,17 +49,11 @@ namespace ProductService.Services
             if (productDto.Name is not null)
                 existingProduct.Name = productDto.Name;
 
-            if (productDto.Description is not null)
-                existingProduct.Description = productDto.Description;
-
             if (productDto.Price.HasValue)
                 existingProduct.Price = productDto.Price.Value;
 
-            if (productDto.Category is not null)
-                existingProduct.Category = productDto.Category;
-
-            if (productDto.Status.HasValue)
-                existingProduct.Status = productDto.Status.Value;
+            if (productDto.Quantity is not null)
+                existingProduct.Quantity = productDto.Quantity.Value;
 
             existingProduct.UpdatedAt = DateTime.UtcNow;
 

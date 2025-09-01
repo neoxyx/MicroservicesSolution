@@ -11,10 +11,8 @@ namespace ProductService.Extensions
             {
                 Id = product.Id,
                 Name = product.Name,
-                Description = product.Description,
                 Price = product.Price,
-                Category = product.Category,
-                Status = product.Status.ToString(),
+                Quantity = product.Quantity,
                 CreatedAt = product.CreatedAt,
                 UpdatedAt = product.UpdatedAt
             };
@@ -25,9 +23,8 @@ namespace ProductService.Extensions
             return new Product
             {
                 Name = productCreateDto.Name,
-                Description = productCreateDto.Description,
                 Price = productCreateDto.Price,
-                Category = productCreateDto.Category
+                Quantity = productCreateDto.Quantity
             };
         }
     }

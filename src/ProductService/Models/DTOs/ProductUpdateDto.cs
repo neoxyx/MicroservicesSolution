@@ -8,15 +8,10 @@ namespace ProductService.Models.DTOs
         [MaxLength(100)]
         public string? Name { get; set; }
 
-        [MaxLength(500)]
-        public string? Description { get; set; }
-
         [Range(0.01, double.MaxValue)]
         public decimal? Price { get; set; }
 
-        [MaxLength(50)]
-        public string? Category { get; set; }
-
-        public ProductStatus? Status { get; set; }
+        [Range(1, int.MaxValue)]
+        public int? Quantity { get; set; }
     }
 }
