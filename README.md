@@ -1,11 +1,9 @@
 ﻿# MicroservicesSolution
-Microservicios con API Gateway - Guía de Ejecución
+Microservicio Productos - Guía de Ejecución
 📋 Requisitos Previos
 .NET 9.0 SDK
 
-Docker Desktop (opcional)
-
-Postman o similar para pruebas, pero cada microservicio tiene su swagger en http://localhost:{port}/api-docs
+Postman o similar para pruebas, pero el microservicio tiene su swagger en http://localhost:5008/api-docs
 
 MySQL (puede usarse en Docker)
 
@@ -21,13 +19,9 @@ docker-compose -f docker-compose.db.yml up -d
 Opción B: Manual
 Crear bases de datos:
 
-userdb
-
 productdb
 
 Configurar conexiones en:
-
-UserService/appsettings.json
 
 ProductService/appsettings.json
 
@@ -38,49 +32,10 @@ A. Sin Docker
 En terminales separadas:
 
 bash
-# User Service
-dotnet run --project src/UserService
-
 # Product Service
 dotnet run --project src/ProductService
 
-# API Gateway (puerto 5000)
-dotnet run --project src/ApiGateway
-B. Con Docker
-bash
-docker-compose up --build
-🔌 Endpoints Disponibles
-API Gateway (http://localhost:5000)
-Servicio	Endpoint	Métodos	Auth Required
-Auth	/api/auth/*	POST	No
-Users	/api/users/*	GET,POST,PUT	Sí (JWT)
-Products	/api/products/*	Todos	Sí (JWT)
-🔐 Autenticación
-Registro:
-
-bash
-POST /api/auth/register
-{
-  "username": "string",
-  "email": "user@example.com",
-  "password": "Admin123!!",
-  "firstName": "string",
-  "lastName": "string",
-  "role": "string"
-}
-Login (obtener JWT):
-
-bash
-POST /api/auth/login
-{
-  "username": "admin",
-  "password": "Admin123!!"
-}
-Respuesta:
-
-json
-{ "token": "eyJhbGciOiJIUzI1NiIs..." }
-🐳 Docker Compose
+🐳 Docker Compose (Para este apartado no es necesario, solo enfocarse en levantar ProductService)
 Archivo docker-compose.yml incluye:
 
 Servicios:
@@ -133,9 +88,8 @@ MicroservicesSolution/
 └── README.md               # Este archivo
 💡 Ejemplo de Uso
 bash
-# Obtener productos (después de login)
-curl -X GET http://localhost:5000/api/products \
-  -H "Authorization: Bearer [TOKEN_JWT]"
+# Obtener productos
+curl -X GET http://localhost:5000/api/products 
 
 Configuración de Ocelot en ApiGateway/ocelot.json
 
