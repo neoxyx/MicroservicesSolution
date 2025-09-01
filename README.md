@@ -136,10 +136,6 @@ bash
 # Obtener productos (después de login)
 curl -X GET http://localhost:5000/api/products \
   -H "Authorization: Bearer [TOKEN_JWT]"
-📌 Notas
-Las migraciones se aplican automáticamente al iniciar los servicios
-sino ejecutar en el bash del path de cada microservicio: dotnet ef migrations add InitialCreate y luego 
-dotnet ef database update
 
 Configuración de Ocelot en ApiGateway/ocelot.json
 
