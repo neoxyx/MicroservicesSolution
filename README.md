@@ -89,7 +89,7 @@ MicroservicesSolution/
 💡 Ejemplo de Uso
 bash
 # Obtener productos
-curl -X GET http://localhost:5000/api/products 
+curl -X GET http://localhost:5008/api/products 
 
 Configuración de Ocelot en ApiGateway/ocelot.json
 
